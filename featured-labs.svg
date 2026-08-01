@@ -1,0 +1,36 @@
+<svg fill="none" width="850" height="200" viewBox="0 0 850 200" xmlns="http://www.w3.org/2000/svg">
+  <style>
+    @keyframes cardGlow {
+      0% { stroke: #00F2FE; }
+      50% { stroke: #39D353; }
+      100% { stroke: #00F2FE; }
+    }
+    .box { fill: #0D1117; stroke-width: 2px; animation: cardGlow 4s infinite ease-in-out; }
+    .box-title { font-family: 'Courier New', monospace; font-size: 14px; font-weight: bold; fill: #00F2FE; }
+    .box-desc { font-family: 'Courier New', monospace; font-size: 11px; fill: #8B949E; }
+  </style>
+
+  <!-- Box 1 -->
+  <rect x="5" y="10" width="270" height="180" rx="8" class="box" />
+  <text x="20" y="40" class="box-title">🛸 UAV &amp; Flight Systems</text>
+  <line x1="20" y1="50" x2="250" y2="50" stroke="#30363D" />
+  <text x="20" y="80" class="box-desc">Sistem kontrol otonom</text>
+  <text x="20" y="100" class="box-desc">UAV &amp; riset aerodinamika</text>
+  <text x="20" y="120" class="box-desc">pesawat tempur.</text>
+
+  <!-- Box 2 -->
+  <rect x="290" y="10" width="270" height="180" rx="8" class="box" />
+  <text x="305" y="40" class="box-title" style="fill: #39D353;">⚔️ Airborne Weaponry</text>
+  <line x1="305" y1="50" x2="535" y2="50" stroke="#30363D" />
+  <text x="305" y="80" class="box-desc">Integrasi sistem avionik</text>
+  <text x="305" y="100" class="box-desc">militer &amp; kontrol</text>
+  <text x="305" y="120" class="box-desc">persenjataan udara.</text>
+
+  <!-- Box 3 -->
+  <rect x="575" y="10" width="270" height="180" rx="8" class="box" />
+  <text x="590" y="40" class="box-title" style="fill: #FF0055;">🛡️ Threat Automation</text>
+  <line x1="590" y1="50" x2="820" y2="50" stroke="#30363D" />
+  <text x="590" y="80" class="box-desc">Otomatisasi analisis</text>
+  <text x="590" y="100" class="box-desc">ancaman siber &amp; pengujian</text>
+  <text x="590" y="120" class="box-desc">penetrasi sistem.</text>
+</svg>
