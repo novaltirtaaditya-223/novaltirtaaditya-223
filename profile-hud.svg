@@ -9,6 +9,7 @@
       </feMerge>
     </filter>
 
+    <!-- Filter Glow Emerald Green -->
     <filter id="greenGlow" x="-20%" y="-20%" width="140%" height="140%">
       <feGaussianBlur stdDeviation="3" result="blur" />
       <feMerge>
@@ -17,7 +18,7 @@
       </feMerge>
     </filter>
 
-    <!-- CLIP PATH (TOPENG) UNTUK ANIMASI KETIK -->
+    <!-- TOPENG (CLIP PATH) UNTUK ANIMASI KETIK NAMA -->
     <clipPath id="typewriterClip">
       <rect x="35" y="60" width="0" height="60">
         <animate attributeName="width" values="0; 450; 450; 0" keyTimes="0; 0.45; 0.85; 1" dur="6s" repeatCount="indefinite" />
@@ -26,30 +27,25 @@
   </defs>
 
   <style>
-    /* Animasi Border Frame Utama */
+    /* 1. Animasi Border Frame Utama (Bergeser Warna Cyan - Emerald) */
     @keyframes neonShift {
       0% { stroke: #00F2FE; filter: drop-shadow(0px 0px 8px #00F2FE); }
       50% { stroke: #39D353; filter: drop-shadow(0px 0px 8px #39D353); }
       100% { stroke: #00F2FE; filter: drop-shadow(0px 0px 8px #00F2FE); }
     }
 
-    /* Animasi Radar Pulse */
-    @keyframes radarPulse {
+    /* 2. Animasi Kedip Lambat untuk Seluruh Teks (Radar Slow Pulse) */
+    @keyframes slowPulse {
       0%, 100% { opacity: 1; }
-      50% { opacity: 0.3; }
+      50% { opacity: 0.35; }
     }
 
-    /* Animasi Pergerakan Kursor Ketik */
+    /* 3. Animasi Pergerakan Kursor Ketik Nama */
     @keyframes moveCursor {
       0% { transform: translateX(0px); opacity: 1; }
       45% { transform: translateX(430px); opacity: 1; }
       85% { transform: translateX(430px); opacity: 1; }
       100% { transform: translateX(0px); opacity: 0; }
-    }
-
-    @keyframes cursorBlink {
-      0%, 100% { opacity: 1; }
-      50% { opacity: 0; }
     }
 
     .main-card {
@@ -58,7 +54,7 @@
       animation: neonShift 6s infinite ease-in-out;
     }
 
-    /* TEKS NAMA: PUTIH TEBAL + GLOW + ANIMASI TYPEWRITER */
+    /* TEKS NAMA: TETAP TYPEWRITER (TANPA KEDIP SAMAN) */
     .title-bold-white {
       font-family: 'Courier New', Monospace, monospace;
       font-weight: 900;
@@ -81,17 +77,20 @@
       filter: url(#cyanGlow);
     }
 
+    /* SELURUH KELAS TEKS LAINNYA: MENGGUNAKAN ANIMASI KEDIP LAMBAT (slowPulse) */
     .hud-title {
       font-family: 'Courier New', monospace;
       font-size: 13px;
       font-weight: bold;
       fill: #00F2FE;
+      animation: slowPulse 3.5s infinite ease-in-out;
     }
 
     .hud-body {
       font-family: 'Courier New', monospace;
       font-size: 12px;
       fill: #C9D1D9;
+      animation: slowPulse 3.5s infinite ease-in-out;
     }
 
     .hud-quote {
@@ -99,13 +98,14 @@
       font-size: 12px;
       fill: #58A6FF;
       font-style: italic;
+      animation: slowPulse 3.5s infinite ease-in-out;
     }
 
     .status-text {
       font-family: 'Courier New', monospace;
       font-size: 11px;
       fill: #39D353;
-      animation: radarPulse 2s infinite ease-in-out;
+      animation: slowPulse 3.5s infinite ease-in-out;
     }
 
     .led-green { fill: #39D353; filter: url(#greenGlow); }
@@ -123,14 +123,15 @@
   <text x="40" y="50" class="status-text">[ SYSTEM: ONLINE ] // [ CLEARANCE: TOP SECRET ] // [ RADAR: ACTIVE ]</text>
   <line x1="40" y1="60" x2="810" y2="60" stroke="#30363D" stroke-width="1" />
 
-  <!-- Teks Nama dengan Animasi Ketik (Topeng ClipPath) -->
+  <!-- Nama "NOVAL TIRTA ADITYA" (TETAP TYPEWRITER KETIK) -->
   <g class="typing-mask">
     <text x="40" y="105" class="title-bold-white">NOVAL TIRTA ADITYA</text>
   </g>
 
-  <!-- Garis Kursor Berjalan (Efek Ketik Cyan) -->
+  <!-- Kursor Ketik Cyan -->
   <line x1="40" y1="78" x2="40" y2="110" class="cursor-line" />
 
+  <!-- Subtitle (Kedip Lambat) -->
   <text x="40" y="145" class="hud-title">> AEROSPACE HARDWARE ENGINEER</text>
   <text x="40" y="168" class="hud-title">> UAV &amp; FIGHTER AIRCRAFT SYSTEMS DESIGNER</text>
   <text x="40" y="191" class="hud-title">> OFFENSIVE SECURITY ARCHITECT</text>
@@ -189,7 +190,7 @@
   <!-- Box 3 -->
   <rect x="570" y="680" width="240" height="170" rx="8" fill="#161B22" stroke="#FF0055" stroke-width="2" />
   <text x="585" y="710" class="hud-title" style="fill: #FF0055;">🛡️ Threat Automation</text>
-  <line x1="585" y1="720" x2="795" y2="720" stroke="#30363D" />
+  <line x1="585" y1="720" x2="795" y2="720" stroke="#30363D" stroke-width="1" />
   <text x="585" y="745" class="hud-body">Otomatisasi analisis</text>
   <text x="585" y="765" class="hud-body">ancaman siber &amp; pengujian</text>
   <text x="585" y="785" class="hud-body">penetrasi sistem.</text>
