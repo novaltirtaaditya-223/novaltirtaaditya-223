@@ -1,0 +1,125 @@
+<svg fill="none" width="850" height="420" viewBox="0 0 850 420" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <!-- Filter Glow Neon Cyan -->
+    <filter id="cyanGlow" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="3" result="blur" />
+      <feMerge>
+        <feMergeNode in="blur" />
+        <feMergeNode in="SourceGraphic" />
+      </feMerge>
+    </filter>
+
+    <!-- Filter Glow Emerald Green -->
+    <filter id="greenGlow" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="3" result="blur" />
+      <feMerge>
+        <feMergeNode in="blur" />
+        <feMergeNode in="SourceGraphic" />
+      </feMerge>
+    </filter>
+  </defs>
+
+  <style>
+    /* 1. Animasi Border Frame Utama */
+    @keyframes neonShift {
+      0% { stroke: #00F2FE; filter: drop-shadow(0px 0px 8px #00F2FE); }
+      50% { stroke: #39D353; filter: drop-shadow(0px 0px 8px #39D353); }
+      100% { stroke: #00F2FE; filter: drop-shadow(0px 0px 8px #00F2FE); }
+    }
+
+    /* 2. Animasi Kedip Lambat untuk Semua Teks */
+    @keyframes slowPulse {
+      0%, 100% { opacity: 1; }
+      50% { opacity: 0.35; }
+    }
+
+    .main-card {
+      fill: #0D1117;
+      stroke-width: 3px;
+      animation: neonShift 6s infinite ease-in-out;
+    }
+
+    /* KELAS TEKS BERKEDIP LAMBAT */
+    .hud-header {
+      font-family: 'Courier New', monospace;
+      font-size: 16px;
+      font-weight: bold;
+      fill: #00F2FE;
+      filter: url(#cyanGlow);
+      letter-spacing: 2px;
+      animation: slowPulse 3.5s infinite ease-in-out;
+    }
+
+    .hud-title {
+      font-family: 'Courier New', monospace;
+      font-size: 13px;
+      font-weight: bold;
+      fill: #00F2FE;
+      animation: slowPulse 3.5s infinite ease-in-out;
+    }
+
+    .hud-body {
+      font-family: 'Courier New', monospace;
+      font-size: 12px;
+      fill: #C9D1D9;
+      animation: slowPulse 3.5s infinite ease-in-out;
+    }
+
+    .status-text {
+      font-family: 'Courier New', monospace;
+      font-size: 11px;
+      fill: #39D353;
+      animation: slowPulse 3.5s infinite ease-in-out;
+    }
+
+    .led-green { fill: #39D353; filter: url(#greenGlow); }
+    .led-cyan { fill: #00F2FE; filter: url(#cyanGlow); }
+  </style>
+
+  <!-- Container Utama -->
+  <rect x="5" y="5" width="840" height="410" rx="14" class="main-card" />
+
+  <!-- Aksen Sudut Tactical HUD -->
+  <path d="M 25 25 L 45 25 L 25 45 Z" fill="#00F2FE" />
+  <path d="M 825 25 L 805 25 L 825 45 Z" fill="#00F2FE" />
+
+  <!-- ================= HEADER SECTION ================= -->
+  <text x="40" y="45" class="status-text">[ PERSONAL DATAFILE ] // [ CLASSIFIED LOGS ] // [ ACTIVE PROFILE ]</text>
+  <line x1="40" y1="55" x2="810" y2="55" stroke="#30363D" stroke-width="1" />
+
+  <text x="40" y="85" class="hud-header">📑 PERSONAL &amp; LIFESTYLE MATRIX</text>
+
+  <!-- ================= SECTION 1: CREATIVITY & HOBBIES ================= -->
+  <line x1="40" y1="105" x2="810" y2="105" stroke="#30363D" stroke-width="1" />
+  <text x="40" y="130" class="hud-title" style="fill: #39D353;">🎨 HOBBIES &amp; CREATIVE INTEL</text>
+
+  <circle cx="50" cy="160" r="4" class="led-green" />
+  <text x="65" y="165" class="hud-title">PRIMARY HOBBIES:</text>
+  <text x="220" y="165" class="hud-body">Drone Design &amp; Aerodynamics | Fighter Jet Concepts | Hardware Modding</text>
+
+  <circle cx="50" cy="195" r="4" class="led-cyan" />
+  <text x="65" y="200" class="hud-title">CREATIVE FOCUS:</text>
+  <text x="220" y="200" class="hud-body">3D / Tactical UI Design | Logic Systems | Engineering Innovation</text>
+
+  <!-- ================= SECTION 2: RATION PROTOCOL (FOOD & DRINKS) ================= -->
+  <line x1="40" y1="225" x2="810" y2="225" stroke="#30363D" stroke-width="1" />
+  <text x="40" y="250" class="hud-title" style="fill: #00F2FE;">🥩 RATION &amp; FUEL PROTOCOL</text>
+
+  <!-- Box Makanan -->
+  <rect x="40" y="270" width="370" height="90" rx="8" fill="#161B22" stroke="#00F2FE" stroke-width="1.5" />
+  <text x="55" y="295" class="hud-title">🍖 FAVORITE FOOD / RATION</text>
+  <line x1="55" y1="305" x2="395" y2="305" stroke="#30363D" />
+  <text x="55" y="328" class="hud-body">• Prime Beef Steak (High Energy Fuel)</text>
+  <text x="55" y="348" class="hud-body">• High-protein fuel for long coding/lab sessions</text>
+
+  <!-- Box Minuman -->
+  <rect x="440" y="270" width="370" height="90" rx="8" fill="#161B22" stroke="#39D353" stroke-width="1.5" />
+  <text x="455" y="295" class="hud-title" style="fill: #39D353;">🥤 FAVORITE DRINK / HYDRATION</text>
+  <line x1="455" y1="305" x2="795" y2="305" stroke="#30363D" />
+  <text x="455" y="328" class="hud-body">• Fresh Milk &amp; Natural Fruit Juice</text>
+  <text x="455" y="348" class="hud-body">• Focus enhancement &amp; stamina recovery</text>
+
+  <!-- Footer -->
+  <line x1="40" y1="380" x2="810" y2="380" stroke="#30363D" stroke-width="1" />
+  <text x="40" y="398" class="status-text">SYSTEM STATUS: OPTIMAL // ALL LOGS UPDATED LOCALLY</text>
+</svg>
